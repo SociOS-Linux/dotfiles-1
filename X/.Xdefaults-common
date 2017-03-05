@@ -1,0 +1,97 @@
+! general settings
+Xft.dpi:96
+Xft.rgba:rgb
+Xft.hinting:true
+Xft.hintstyle:hintslight
+Xft.antialias:true
+
+! xterm settings
+!
+! colours - see below
+! XTerm*background:#3f3f3f
+! XTerm*foreground:#dcdccc
+
+! general xterm
+XTerm*vt100*geometry:88x36
+XTerm*toolBar:false
+XTerm*fullscreen:never
+XTerm*termName:xterm-256color
+XTerm*saveLines:16384
+XTerm*loginShell:true
+XTerm*cursorUnderline:false
+XTerm*cursorBlink:true
+XTerm*visualBell:true
+XTerm*urgentOnBell:true
+XTerm*internalBorder:2
+
+! stop output to terminal from jumping down to bottom of scroll again
+!xterm*scrollTtyOutput: false
+
+! Make the Alt key work the way I want in Emacs
+!XTerm*vt100*utf8:1
+!XTerm*vt100*eightBitInput:false
+!XTerm*vt100*metaSendsEscape:true
+!XTerm*vt100*locale:UTF-8
+
+! double-click to select whole URLs
+xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+! Menu settings
+XTerm.mainMenu.line1.foreground:	white
+XTerm.mainMenu.line2.foreground:	white
+XTerm.mainMenu.suspend.foreground:	red
+XTerm.mainMenu.continue.foreground:	red
+XTerm.mainMenu.interrupt.foreground:	red
+XTerm.mainMenu.hangup.foreground:	red
+XTerm.mainMenu.terminate.foreground:	red
+XTerm.mainMenu.kill.foreground:		red
+XTerm.mainMenu.quit.foreground:		yellow
+XTerm.mainMenu*borderColor:		white
+
+XTerm.vtMenu.foreground:		white
+XTerm.vtMenu*foreground:		#0cf
+XTerm.vtMenu*borderColor:		white
+XTerm.vtMenu.softreset.foreground:	#0fa
+XTerm.vtMenu.hardreset.foreground:	#0fa
+XTerm.vtMenu.tekshow.foreground:	#4cc
+XTerm.vtMenu.tekmode.foreground:	#4cc
+XTerm.vtMenu.vthide.foreground:		#4cc
+XTerm.vtMenu.line1.foreground:		white
+XTerm.vtMenu.line2.foreground:		white
+
+! Font settings
+!
+! characters that a good font needs to distinguish:
+! 1 l I i
+! 0 O D B 8
+! n m w
+! XTerm*faceName:xft:DejaVu Sans Mono:pixelsize=16
+! XTerm*faceName:xft:Bitstream Vera Sans Mono:pixelsize=12
+XTerm*faceName:xft:Consolas:pixelsize=20
+! XTerm*faceName:xft:Lucida Console:pixelsize=13
+! XTerm*faceName:xft:Inconsolata:pixelsize=14
+! XTerm*faceName:xft:Envy Code R:pixelsize=13
+! XTerm*faceName:xft:ProggyCleanSZBP:pixelsize=12
+! XTerm*faceName:xft:Terminus:pixelsize=14
+
+! Change colours used by commands like ls because default
+! dircolors are unreadable on a dark background. See
+! /etc/dircolors for defaults.
+*background:rgb:33/33/33
+*foreground:gray90
+*color0:#3f3f3f
+*color1:#9d8383
+*color2:#60a381
+*color3:#dfaf8f
+*color4:#7da2c8
+*color5:#c073a8
+*color6:#70B3B6
+*color7:#DCDCDC
+*color8:#7BA38F
+*color9:#DCA3A3
+*color10:#72D5A3
+*color11:#F0DFAF
+*color12:#94BFF3
+*color13:#EC93D3
+*color14:#93E0E3
+*color15:#FFFFFF

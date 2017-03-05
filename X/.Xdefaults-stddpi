@@ -1,0 +1,3 @@
+#include ".Xdefaults-common"
+XTerm*vt100*geometry:88x36
+XTerm*faceName:xft:Consolas:pixelsize=13
