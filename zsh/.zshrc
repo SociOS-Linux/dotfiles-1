@@ -22,6 +22,52 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Custom zle config -MR
+
+# This section maps the ESC-/ chord to vi search rather than _history-complete-older,
+# and it sets the initial cursor position after searching to the first non-blank
+# character on the line.
+vi-search-backward-fix() {
+	zle vi-cmd-mode
+	zle vi-history-search-backward
+	zle .vi-first-non-blank
+}
+autoload vi-search-backward-fix
+zle -N vi-search-backward-fix
+
+vi-repeat-search-fix() {
+	zle vi-repeat-search
+	zle .vi-first-non-blank
+}
+autoload vi-repeat-search-fix
+zle -N vi-repeat-search-fix
+
+vi-rev-repeat-search-fix() {
+	zle vi-rev-repeat-search
+	zle .vi-first-non-blank
+}
+autoload vi-rev-repeat-search-fix
+zle -N vi-rev-repeat-search-fix
+
+bindkey -M viins '\e/' vi-search-backward-fix
+bindkey -M vicmd '/' vi-search-backward-fix
+bindkey -M vicmd 'n' vi-repeat-search-fix
+bindkey -M vicmd 'N' vi-rev-repeat-search-fix
+bindkey -M vicmd "k" vi-up-line-or-history
+bindkey -M vicmd "j" vi-down-line-or-history
+bindkey "^[[A" vi-up-line-or-history
+bindkey "^[[B" vi-down-line-or-history
+bindkey "^[OA" vi-up-line-or-history
+bindkey "^[OB" vi-down-line-or-history
+
+# Allow editing behind the point at which insert mode was entered
+bindkey "^?" backward-delete-char
+bindkey "^W" backward-kill-word
+bindkey "^H" backward-delete-char
+bindkey "^U" backward-kill-line
+
+# End of custom zle config -MR
+
 # Additional history options
 setopt extended_history # Add additional data to history like timestamp
 setopt inc_append_history # Add immediately
