@@ -4,9 +4,14 @@ case $- in
       *) return;;
 esac
 
-PATH="$HOME/bin:$HOME/apoe4it/bin:$PATH:."
-XENVIRONMENT=$HOME/.Xdefaults-$(choose-xdefaults)
-export XENVIRONMENT
+if [ -d $HOME/apoe4it/bin ]; then
+	PATH="$HOME/apoe4it/bin:$PATH"
+fi
+PATH="$HOME/bin:$PATH:."
+if [ -f $HOME/.Xdefaults-common ]; then
+	XENVIRONMENT=$HOME/.Xdefaults-$(choose-xdefaults)
+	export XENVIRONMENT
+fi
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
